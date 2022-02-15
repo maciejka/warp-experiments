@@ -1,11 +1,22 @@
 # Warp evaluation
+* solidity: [dai.sol](contracts/dai.sol)
+* transpiled cairo: [dai.cairo](contracts/dai.cairo)
+* native cairo: [dai.cairo](https://github.com/makerdao/starknet-dai-bridge/blob/main/contracts/l2/dai.cairo)
 
-
+loc: 1768 vs 430
 
 ## Constructor
-"n_steps": 1392 vs 111
+* transpiled
+    * `n_steps`: 1392
+    * `pedersen_builtin`: 6,
+    * `range_check_builtin`: 67
+* native
+    * `n_steps`: 111
+    * `pedersen_builtin`: 1,
+    * `range_check_builtin`: 3
 
-### Warp
+### transpiled
+```
 (cairo_venv) maciejka@X1:~/projects/maker/starknet-dai-bridge$ starknet get_transaction_receipt --hash  0x775644ea5ae7c753fcd50e97b081348f96db373f9bac4b90f3348ae04f1e66
 {
     "block_hash": "0x2cf9b5ff2900f0d10e8a0730e897e0d2cd249c78f9e0376e0da732a4618288d",
@@ -39,9 +50,10 @@
     "transaction_hash": "0x775644ea5ae7c753fcd50e97b081348f96db373f9bac4b90f3348ae04f1e66",
     "transaction_index": 6
 }
+```
 
-
-### Cairo
+### native
+```
 (cairo_venv) maciejka@X1:~/projects/maker/starknet-dai-bridge$ starknet get_transaction_receipt --hash  0x44aa605e1ab75c2f2f5b49385f8fe612503ff58cf4fa564ac17516e7a51e834
 {
     "block_hash": "0x7c952f3920e01a305ca33ee9379bc578238671fc985e4058f241d1d5491e9ea",
@@ -74,3 +86,4 @@
     "transaction_hash": "0x44aa605e1ab75c2f2f5b49385f8fe612503ff58cf4fa564ac17516e7a51e834",
     "transaction_index": 18
 }
+```
