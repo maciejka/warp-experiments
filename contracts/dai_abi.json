@@ -1,0 +1,53 @@
+[
+    {
+        "inputs": [
+            {
+                "name": "calldata_size",
+                "type": "felt"
+            },
+            {
+                "name": "calldata_len",
+                "type": "felt"
+            },
+            {
+                "name": "calldata",
+                "type": "felt*"
+            }
+        ],
+        "name": "constructor",
+        "outputs": [],
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "name": "calldata_size",
+                "type": "felt"
+            },
+            {
+                "name": "calldata_len",
+                "type": "felt"
+            },
+            {
+                "name": "calldata",
+                "type": "felt*"
+            }
+        ],
+        "name": "__main",
+        "outputs": [
+            {
+                "name": "returndata_size",
+                "type": "felt"
+            },
+            {
+                "name": "returndata_len",
+                "type": "felt"
+            },
+            {
+                "name": "returndata",
+                "type": "felt*"
+            }
+        ],
+        "type": "function"
+    }
+]
