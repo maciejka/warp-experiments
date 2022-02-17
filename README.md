@@ -1,11 +1,11 @@
 # Warp evaluation
-
-# Version 1.0.0
+## Contracts
 * solidity(canonical l2 dai with permit function removed): [dai.sol](contracts/dai.sol)
-* transpiled cairo: [dai.cairo](contracts/dai.cairo)
 * native cairo: [dai.cairo](https://github.com/makerdao/starknet-dai-bridge/blob/main/contracts/l2/dai.cairo)
 
-loc: 1768 vs 430
+# Version 1.0
+* transpiled cairo: [dai.cairo](contracts/dai.cairo)
+* loc: 1768 vs 430
 
 ## Constructor
 * transpiled
@@ -88,4 +88,26 @@ loc: 1768 vs 430
     "transaction_hash": "0x44aa605e1ab75c2f2f5b49385f8fe612503ff58cf4fa564ac17516e7a51e834",
     "transaction_index": 18
 }
+```
+
+# Version 2.0
+Version 2.0 seems much more promising:
+![Warp 2.0 vs Native](assets/v2.0-dai-steps.png)
+
+Data from yet unreleased version 2.0 by [Greg](https://twitter.com/0xGreg_).
+
+## transpiled constructor call resources
+```
+cairo_usage=ExecutionResources(
+    n_steps=141,
+    builtin_instance_counter={
+        'pedersen_builtin': 3,
+        'range_check_builtin': 9,
+        'bitwise_builtin': 0,
+        'output_builtin': 0,
+        'ecdsa_builtin': 0,
+        'ec_op_builtin': 0
+    },
+    n_memory_holes=22
+)
 ```
